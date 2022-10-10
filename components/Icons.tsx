@@ -1,0 +1,34 @@
+import React from "react";
+import Image from "next/image";
+
+type Props = {
+  width?: number;
+  height?: number;
+  onClick?: (params: any) => any;
+};
+
+const PurpleArrow = (props: Props) => {
+  return (
+    <Image
+      alt=""
+      width={props.width}
+      height={props.height}
+      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAABmJLR0QA/wD/AP+gvaeTAAAEE0lEQVR4nO2cT4gbVRzHP29mMuvWFSJ6UC+eBKVVg0XxIrR0l4KCVq0eKhW8Ws9CK3hQcI978ib0IF5qdVEQ7FbcPWolTf0TWvAu9FA8uJu0ycw8D8tInM2kk2Qmefve77PsIZnfvPfj+8m+5E2YBUEQBEEQBEEQBEEQBEEQBEEQBEEQBMFW1LwbmBUXjrSXvHtZRXMS0Ci+SnY4++bWwe159uWEgPUTrXrSCzc0PJs5dM1b8JZfW3/i1lwawwEBafio3fC13lMyVwlWC8iGn2KSBGsF5IWfYooEKwV88/KN+6I43gKeGVWXlaCgeVvFK29999TfFbb3P7xZTTRL4iRZVWp0+AAq8/LTcPge7V/+4qXf7q+qtyxWCgB9EvYGPIxhEha0/+PXr15/oIrOslgqgP8Wl0kkAI3kTvLDLCRYKUDDxcHHk0rQd5JLVS9HVgoIPP8ccHXwuUmXo6rfE6wU8Mq3j/+jgt4x4JfB5018T7DyY2jK+olWXUfhBtx1I7aHWe0TrBYA5kuwXgCYLcEJAWCuBGcEgJkSnBIA5klwTgCYJcFJAWCOhFwBF95oh2pHf6xQp4GHxx145KQGaR/Wyywl5O6E/W31kUK9j8Xhw/CwJ7121O9ENz578eqj48yfK0Ar/fY4AxXBtPBTypLg+96DS5F//fzKT48VnXvUtSCrX/lZypIQBMHiolr8taiEmVyMMz38lHlIqFzAfgk/ZdYSKhWw38KH/J4nlXBALV47f6T9UN45lQmwKfyix4fV+EFwoOb1vs+rr0SAjeGPU5etqYXBobza0gXYHP449YM1ivydXakCXAh/nPPSml4v+iOvpjQBLoU/zvlxHHW8ndrxvOOlCHAx/CLj9OOo20m6jVM/P3kzryb/UoTmr2kbMJWyex42XhRH3W7cffqdy8//OercXAEe6vNJJjadqnoeHDeK+91OgfABgrwD8ZL+0N9WJOjTSvHIqAn3C1X3rBT0o363E98uFD44/IVMylpjs+4rNkAPvY9gLJRueYFeee/KcuHvBJwWMO/wwWEBJoQPjgowJXxwUIBJ4QP4Uzexj1hrbNZ9Sgof3fJq04UPDv0FlB5+OH344IgAU8MHBwSYHD5YLuDTg5tLcU1vAYdLGK4ZxLWVd39/odR7iK28RSklDlnF4PDBcgEku/cLT4dueWFyvIrwwXYBU1P+mp/FagEa/aVm4p9mEIfHqgwfLBcQRN45oDnBqc1aHFay5mexWsCZ9tHtBG8ZzRU0FPxt+aGubM3PYvXH0JS1xmbd08kl4Lm7lLb8hWrX/CxOCIBCEmYePjgkAEZKmEv44JgA2N0dR0HyCfA6gEZfrEX+B2faR+f67ysFQRAEQRAEQRAEQRAEQRAEQRAEQRAE+/gXDfwI2bN1MaoAAAAASUVORK5CYII="
+    />
+  );
+};
+
+const Pencil = (props: Props) => {
+  return (
+    <div onClick={props.onClick}>
+      <Image
+        width={30}
+        height={30}
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABmJLR0QA/wD/AP+gvaeTAAAEOUlEQVRYhe3XW0xTdxwH8O//nF4opXbUlsqlgLgMBjpdNE4MEJORdVPfdskeCgZJlj14yZZsZmYPvsxNeRhZYuaYG4YlJnN7GsnwMnWaQDokMt060Cq2FAq0XGprW3o557+Hpspsa1vOKcuSfd96zvmdfPL7n9/5nwL/559pP32nydRlcZw009pMrmdyDVqa9lNjTU7Xwq8KuawMEv5y1yCtS1ezYsADPePr5x96LupXq8nmuioA0PMMfykdkqwUbsIzN1RRrJVXry158vQMwzMvv7OVWJLV5hyYBhdPSmROgRni4kmKzBkwS1w8CcicDEkMN5stDkgyOKID3ztjr4vhdNni4tHzDH/pqwG6AQAkYuIOnnG8MO52X68o0cmWiQMA9A+P6hdD4SsAtKJ1cP9Ze61j1j1oEIj77eZdzC74qEKlfBsQqYP7z9prJ6fnbpQX6+Q1AnBW2xQ8Pn9Ep9cae/Y8ewUQYYrFxN2fdIeLSgu3nXyjcjh+XBAw1zhAwBSLhrNPY2zSlRQHLLODouImZsL6Uk1S3LKApu7bjQGv/3J5iU6Sa1zWQFP37caAz3+1vFhHVgIHZPEMtvbcaxATV1KmqU+HAzLsYGvPvQb/A+81g341qakqFQV34vXKG5nUpAWauscaAz6P4M7dsU3BNukOF5cVZowD0izxa1/8LGeigT5CQeYWvIhynCBcUWnhtmxwaYF8UPOWSkrpsZaN0Kjk+NPqEITL5JnLCpgvZQ8bXywtYBkCU4MBE9NzeODzZ3xzq10Y7qnAV4/210tZxrC+/BkAgFYlRV2lDuZbVgwMj2IxHEmLG5tIvUMIBublyQ41b1qjIEvG6N3mCnS0bEKlXgXz71aAPgU36aJqTcFuIbiUQOMnQ8VRjjc2PF+UcJ5lCNqayiBhAdeCNxFni+E0qvydp1ueuygElxIok3P7XqrWQiFjUxauW6PG9T/uYnjkPsKR6GOcM4b7pq3mnFAcACQI3jxiKYjKwt+37qhSqhTSlIUbK1dh8zotnPNBDI04EIlysE25qVap3HVqrzg4IEkHvQpvByFQrspPjQNib3i9Woa9OwxQKiSwO2O4r9ur+8TCJQWyhOwJRXi2s3cU/lA0ZSEFYBn34PPeER9PyUNtgfg44Imtzni0vw0M8238t0GrxMHdNSjIe/zXJRThMGido+eGnYFgmJsJhvjj0kX2u94jWwJi4xKAO4+ZHRylZUuPxZHBUBTX/nKFrlpmKAEZCEW4T89/VP9LLlBJgc2fDWxgQW4luyhPwvI8aIAQdC0GSeeFj7dmv+ctM4/WTkaYExxNfPMyBKFghP6olnMHfnh/+/xKweIhAPBKx00lwwe9lNJHQ8OwzBQf4TvPH64/vtKopZEAAKGBDkrBAKAMQ8w8JPv6PtiS1WdRrhJbYh7bAXwpJ9yhnz5s8P27pP9Y/gYX5yCTPKjhKgAAAABJRU5ErkJggg=="
+        alt="Pencil icon by Icons8"
+      />
+    </div>
+  );
+};
+
+export { PurpleArrow, Pencil };
