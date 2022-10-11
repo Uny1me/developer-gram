@@ -35,10 +35,10 @@ const TextImage = (props: Props) => {
     link: "",
     title: "",
   });
-  const [upload, setUpload] = useState<File>();
   const [preview, setPreview] = useState<string>();
   const [picker, setPicker] = useState<boolean>(false);
   const [headerColor, setHeaderColor] = useState<string>("#fff");
+
   const exportImage = () => {
     var node = document.getElementById("info-text");
     htmlToImage
@@ -105,7 +105,7 @@ const TextImage = (props: Props) => {
               >
                 Slide Header
               </label>
-              <div className="flex">
+              <div className="flex items-center">
                 <input
                   type="text"
                   className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
@@ -166,8 +166,6 @@ const TextImage = (props: Props) => {
                   // This addresses the error: event.target.files' is possibly 'null'
                   const file = event.target.files![0];
                   if (file && file.type.substring(0, 5) === "image") {
-                    setUpload(file);
-
                     const reader = new FileReader();
                     reader.onloadend = () => {
                       setPreview(reader.result as string);
@@ -219,10 +217,8 @@ const TextImage = (props: Props) => {
             </div>
             <SkeletonTheme baseColor="#eff" highlightColor="#ffe">
               <section className="px-6 py-6">
-                {slideData.count ? (
+                {slideData.count && (
                   <p className=" text-xl mb-2">0{slideData.count}</p>
-                ) : (
-                  <Skeleton height={20} width={"20px"} />
                 )}
                 {slideData.title ? (
                   <p
@@ -268,15 +264,11 @@ const TextImage = (props: Props) => {
                   <Skeleton height={180} width={"100%"} />
                 )}
 
-                <Link href={`${slideData.link}`} passHref>
-                  {slideData.link ? (
+                <Link href={`${slideData?.link}`} passHref>
+                  {slideData.link && (
                     <p className="text-white text-base  text-center py-2 underline font-100">
                       {slideData.link}
                     </p>
-                  ) : (
-                    <div className="mx-auto text-center">
-                      <Skeleton height={10} width={"50%"} />
-                    </div>
                   )}
                 </Link>
               </section>

@@ -21,12 +21,20 @@ const PurpleArrow = (props: Props) => {
 const Pencil = (props: Props) => {
   return (
     <div onClick={props.onClick}>
-      <Image
-        width={30}
-        height={30}
-        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABmJLR0QA/wD/AP+gvaeTAAAEOUlEQVRYhe3XW0xTdxwH8O//nF4opXbUlsqlgLgMBjpdNE4MEJORdVPfdskeCgZJlj14yZZsZmYPvsxNeRhZYuaYG4YlJnN7GsnwMnWaQDokMt060Cq2FAq0XGprW3o557+Hpspsa1vOKcuSfd96zvmdfPL7n9/5nwL/559pP32nydRlcZw009pMrmdyDVqa9lNjTU7Xwq8KuawMEv5y1yCtS1ezYsADPePr5x96LupXq8nmuioA0PMMfykdkqwUbsIzN1RRrJVXry158vQMwzMvv7OVWJLV5hyYBhdPSmROgRni4kmKzBkwS1w8CcicDEkMN5stDkgyOKID3ztjr4vhdNni4tHzDH/pqwG6AQAkYuIOnnG8MO52X68o0cmWiQMA9A+P6hdD4SsAtKJ1cP9Ze61j1j1oEIj77eZdzC74qEKlfBsQqYP7z9prJ6fnbpQX6+Q1AnBW2xQ8Pn9Ep9cae/Y8ewUQYYrFxN2fdIeLSgu3nXyjcjh+XBAw1zhAwBSLhrNPY2zSlRQHLLODouImZsL6Uk1S3LKApu7bjQGv/3J5iU6Sa1zWQFP37caAz3+1vFhHVgIHZPEMtvbcaxATV1KmqU+HAzLsYGvPvQb/A+81g341qakqFQV34vXKG5nUpAWauscaAz6P4M7dsU3BNukOF5cVZowD0izxa1/8LGeigT5CQeYWvIhynCBcUWnhtmxwaYF8UPOWSkrpsZaN0Kjk+NPqEITL5JnLCpgvZQ8bXywtYBkCU4MBE9NzeODzZ3xzq10Y7qnAV4/210tZxrC+/BkAgFYlRV2lDuZbVgwMj2IxHEmLG5tIvUMIBublyQ41b1qjIEvG6N3mCnS0bEKlXgXz71aAPgU36aJqTcFuIbiUQOMnQ8VRjjc2PF+UcJ5lCNqayiBhAdeCNxFni+E0qvydp1ueuygElxIok3P7XqrWQiFjUxauW6PG9T/uYnjkPsKR6GOcM4b7pq3mnFAcACQI3jxiKYjKwt+37qhSqhTSlIUbK1dh8zotnPNBDI04EIlysE25qVap3HVqrzg4IEkHvQpvByFQrspPjQNib3i9Woa9OwxQKiSwO2O4r9ur+8TCJQWyhOwJRXi2s3cU/lA0ZSEFYBn34PPeER9PyUNtgfg44Imtzni0vw0M8238t0GrxMHdNSjIe/zXJRThMGido+eGnYFgmJsJhvjj0kX2u94jWwJi4xKAO4+ZHRylZUuPxZHBUBTX/nKFrlpmKAEZCEW4T89/VP9LLlBJgc2fDWxgQW4luyhPwvI8aIAQdC0GSeeFj7dmv+ctM4/WTkaYExxNfPMyBKFghP6olnMHfnh/+/xKweIhAPBKx00lwwe9lNJHQ8OwzBQf4TvPH64/vtKopZEAAKGBDkrBAKAMQ8w8JPv6PtiS1WdRrhJbYh7bAXwpJ9yhnz5s8P27pP9Y/gYX5yCTPKjhKgAAAABJRU5ErkJggg=="
-        alt="Pencil icon by Icons8"
-      />
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        className="w-6 h-6 ml-3"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42"
+        />
+      </svg>
     </div>
   );
 };

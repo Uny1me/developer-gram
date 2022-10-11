@@ -15,6 +15,7 @@ type Props = {
   one?: StaticImageData;
   two?: StaticImageData;
   three?: StaticImageData;
+  four?: StaticImageData;
 };
 
 function Slider(props: Props) {
@@ -50,6 +51,11 @@ function Slider(props: Props) {
       <SwiperSlide>
         <Image src={props.two!} alt="" width={375} height={520} />
       </SwiperSlide>
+      {props.four && (
+        <SwiperSlide>
+          <Image src={props.four!} alt="" width={375} height={520} />
+        </SwiperSlide>
+      )}
       <SwiperSlide>
         <Image src={props.three!} alt="" width={375} height={520} />
       </SwiperSlide>
