@@ -23,7 +23,8 @@ export default function Workshop() {
         "Create a unique set of cards with segmented information and add images to each one",
     },
     { value: "Info", label: "Information" },
-    { value: "Closing", label: "Closing" },
+    { value: "Code", label: "Code Posts" },
+    { value: "Credits", label: "End Credits" },
   ];
 
   const customStyles = {
