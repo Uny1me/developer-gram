@@ -21,6 +21,7 @@ type coverData = {
   imageDirection?: string;
   illustrationDirection?: string;
   headerDirection?: string;
+  username?: string;
 };
 
 export default function Cover({}: Props) {
@@ -30,6 +31,7 @@ export default function Cover({}: Props) {
     imageDirection: "",
     illustrationDirection: "right",
     headerDirection: "left",
+    username: "",
   });
   const [preview, setPreview] = useState<string>();
   const [headerPicker, setHeaderPicker] = useState<boolean>(false);
@@ -38,12 +40,12 @@ export default function Cover({}: Props) {
   const [highlightColor, setHighlightColor] = useState<string>("#fff");
 
   const exportImage = () => {
-    var node = document.getElementById("info-text");
+    var node = document.getElementById("post-cover");
     htmlToImage
       .toPng(node as HTMLElement)
       .then(function (dataUrl) {
         // Download Image
-        download(dataUrl, "text-image.png");
+        download(dataUrl, "post-cover.png");
       })
       .catch(function (error) {
         console.error("oops, something went wrong!", error);
@@ -195,7 +197,25 @@ export default function Cover({}: Props) {
                 <option value="end">Right</option>
               </select>
             </div>
+            <div className="mb-3">
+              <label
+                htmlFor="cover-header"
+                className="form-label inline-block mb-1 text-slate-100"
+              >
+                Username
+                <span className="text-red-500 ml-2">
+                  (Instagram or others)
+                </span>{" "}
+              </label>
 
+              <input
+                className="form-control block w-full px-3 py-1.5 text-base font-normal text-slate-900 bg-white bg-clip-padding border-solid border-slate-300 rounded transition ease-in-out m-0 focus:text-slate-900 focus:bg-white focus:outline-none"
+                value={coverData.username}
+                onChange={(e) =>
+                  setCoverData({ ...coverData, username: e.target.value })
+                }
+              />
+            </div>
             <button
               className="px-5 p-3 bg-white rounded-md uppercase tracking-normal text-xl text-pink-900 font-bebas relative  lg:mt-0"
               type="submit"
@@ -266,11 +286,100 @@ export default function Cover({}: Props) {
                 ) : (
                   <Skeleton height={180} width={"100%"} />
                 )}
+                {coverData.username && (
+                  <p
+                    className={`text-md font-albert my-4
+                    ${coverData.illustrationDirection === "end" && "text-right"}
+                    text-${coverData.illustrationDirection}`}
+                  >
+                    {coverData.username}
+                  </p>
+                )}{" "}
               </section>
             </SkeletonTheme>
           </div>
         </div>
       </div>
+      {/* Actual Export */}
+
+      <div className="absolute top-0 -right-0" style={{ zIndex: "-999" }}>
+        <div
+          className="max-w-100 rounded overflow-hidden shadow-lg w-96 py-6 bg-white pattern-constellation mb-6"
+          id="post-cover"
+          style={{
+            minWidth: "1080px",
+            maxWidth: "1080px",
+            minHeight: "1080px",
+            maxHeight: "1080px",
+          }}
+        >
+          <div className="inline-flex justify-end w-full px-12 ">
+            <PurpleArrow width={96} height={96} />
+          </div>
+          <SkeletonTheme baseColor="#eff" highlightColor="#ffe">
+            <section className="px-6 py-6 relative">
+              {coverData.header ? (
+                <p
+                  className={`text-8xl mb-2 ml-4 text-${coverData.headerDirection}`}
+                  style={{
+                    color: `${headerColor}`,
+                  }}
+                >
+                  {coverData.header}{" "}
+                </p>
+              ) : (
+                <Skeleton
+                  height={30}
+                  width={"80%"}
+                  className={`float-${coverData.headerDirection}`}
+                />
+              )}
+              {coverData.highlight && (
+                <p
+                  className={`text-8xl mb-2 ml-4 text-${coverData.headerDirection}`}
+                  style={{ color: `${highlightColor}` }}
+                >
+                  {coverData.highlight}
+                </p>
+              )}{" "}
+              {preview ? (
+                <div
+                  className={`flex items-center justify-${coverData.illustrationDirection} mt-24`}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    overflow: "hidden",
+                  }}
+                >
+                  {/*eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={preview}
+                    alt=""
+                    className="ml-4 mr-4"
+                    style={{
+                      width: "60%",
+                      height: "100%",
+                      objectFit: "cover",
+                    }}
+                  />
+                </div>
+              ) : (
+                <Skeleton height={180} width={"100%"} />
+              )}
+              {coverData.username && (
+                <p
+                  className={`text-md font-albert my-12  ml-6
+                    ${coverData.illustrationDirection === "end" && "text-right"}
+                    text-${coverData.illustrationDirection}`}
+                >
+                  {coverData.username}
+                </p>
+              )}{" "}
+            </section>
+          </SkeletonTheme>
+        </div>
+      </div>
+      {/* Actual Export */}
     </div>
   );
 }

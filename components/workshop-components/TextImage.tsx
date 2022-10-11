@@ -281,6 +281,7 @@ const TextImage = (props: Props) => {
       </div>
 
       {/* Actual Export */}
+
       <div
         className="absolute top-0 -right-0"
         style={{
@@ -369,7 +370,7 @@ const TextImage = (props: Props) => {
           </SkeletonTheme>
         </div>
       </div>
-
+      {/* Actual Export */}
       <a
         href="https://icons8.com/icon/JBsFFuVDTkKw/right-arrow"
         className="hidden"
