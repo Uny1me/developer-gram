@@ -1,4 +1,5 @@
 import Cover from "./workshop-components/Cover";
+import Credits from "./workshop-components/Credits";
 import TextImage from "./workshop-components/TextImage";
 
 type Props = {
@@ -16,6 +17,7 @@ export default function WorkShopBody(props: Props) {
         <TextImage workshop={props.workshop} />
       )}
       {props.workshop.value === "Cover" && <Cover />}
+      {props.workshop.value === "Credits" && <Credits />}
     </div>
   );
 }

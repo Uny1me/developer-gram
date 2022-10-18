@@ -139,7 +139,7 @@ const TextImage = (props: Props) => {
               <textarea
                 className="form-control block w-full px-3 py-1.5 text-base font-normal text-slate-900 bg-white bg-clip-padding border-solid border-slate-300 rounded transition ease-in-out m-0 focus:text-slate-900 focus:bg-white focus:outline-none "
                 rows={7}
-                maxLength={250}
+                maxLength={280}
                 value={slideData.description}
                 name="slide-description"
                 onChange={(e) => {
@@ -272,9 +272,6 @@ const TextImage = (props: Props) => {
                   )}
                 </Link>
               </section>
-              <small className="absolute bottom-0 text-white text-center font-albert text-xs w-full p-1">
-                Made with DeveloperGram
-              </small>
             </SkeletonTheme>
           </div>
         </div>
@@ -364,9 +361,6 @@ const TextImage = (props: Props) => {
                 )}
               </Link>
             </section>
-            <div className="absolute bottom-1 text-white text-center font-albert text-base w-full mt-0">
-              Made with DeveloperGram
-            </div>
           </SkeletonTheme>
         </div>
       </div>
