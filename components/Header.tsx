@@ -6,7 +6,6 @@ type Props = {};
 
 const Header = (props: Props) => {
   let router = useRouter();
-  const routeName = router.pathname;
 
   const [openMobileMenu, setOpenMobileMenu] = useState<boolean>(false);
   return (
@@ -15,8 +14,8 @@ const Header = (props: Props) => {
       style={{ background: "rgba(0,0,0,.6)" }}
     >
       <div className="container flex flex-wrap justify-between items-center mx-auto">
-        <Link href="/" className="flex items-center" passHref>
-          <h1 className="self-center text-xl font-semibold whitespace-nowrap dark:text-white tracking-wider">
+        <Link href="/" passHref>
+          <h1 className="text-xl font-semibold whitespace-nowrap dark:text-white tracking-wider cursor-pointer">
             Developer Gram
           </h1>
         </Link>
