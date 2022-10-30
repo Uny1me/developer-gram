@@ -6,7 +6,8 @@
     "dev": "next dev -p 2400",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prod": "next build && next export"
   },
   "dependencies": {
     "@capacitor/android": "^4.3.0",
@@ -14,20 +15,24 @@
     "@capacitor/core": "^4.3.0",
     "@capacitor/ios": "^4.3.0",
     "@types/downloadjs": "^1.4.3",
+    "@types/react-animations": "^1.0.0",
     "@types/react-color": "^3.0.6",
     "@types/react-slick": "^0.23.10",
+    "@types/styled-components": "^5.1.26",
     "animate.css": "^4.1.1",
     "downloadjs": "^1.4.7",
     "html-to-image": "^1.10.8",
     "next": "12.3.1",
     "react": "18.2.0",
     "react-animate-css": "^0.0.1",
+    "react-animations": "^1.0.0",
     "react-color": "^2.19.3",
     "react-dom": "18.2.0",
     "react-loading-skeleton": "^3.1.0",
     "react-select": "^5.4.0",
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1",
+    "styled-components": "^5.3.6",
     "swiper": "^8.4.3"
   },
   "devDependencies": {

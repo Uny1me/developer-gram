@@ -3,8 +3,16 @@ import Link from "next/link";
 import styles from "styles/Home.module.css";
 import Image from "next/image";
 import MockUp from "public/images/mockup.webp";
+import { bounceInUp } from "react-animations";
+import styled, { keyframes } from "styled-components";
 
 const Home: NextPage = () => {
+  const bounceAnimation = keyframes`${bounceInUp}`;
+
+  const BouncyDiv = styled.div`
+    animation: 2s ${bounceAnimation};
+  `;
+
   return (
     <main
       className={`${styles.main} flex flex-col lg:items-center items-start lg:flex-row lg:text-left`}
@@ -24,7 +32,9 @@ const Home: NextPage = () => {
           </button>
         </Link>
       </div>
-      <Image src={MockUp} width={"390"} height={"740"} alt="none" />
+      <BouncyDiv>
+        <Image src={MockUp} width={"390"} height={"740"} alt="none" />
+      </BouncyDiv>
     </main>
   );
 };

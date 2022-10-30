@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Developer Gram !</title>
+        <title>Developer Gram &mdash; A Developer&apos;s Tool</title>
       </Head>
       <Header />
       <div className="p-5 lg:pt-0">

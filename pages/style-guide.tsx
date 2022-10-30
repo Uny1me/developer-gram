@@ -44,6 +44,7 @@ const StyleGuide: NextPage = () => {
         />
       </div>
       <Image src={MockUp} width={"390"} height={"740"} alt="none" />
+      {/* https://codetoimg.com/ */}
     </main>
   );
 };

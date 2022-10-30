@@ -12,7 +12,7 @@ const WorkShopOptions = [
       "Create a unique set of cards with segmented information and add images to each one",
   },
   { value: "Info", label: "Information" },
-  { value: "Code", label: "Code Posts" },
+  { value: "Code", label: "CodeXplainer", description:"Create slide(s) simply for code snippets, perfectly scaled." },
   { value: "Credits", label: "End Credits" },
 ];
 
