@@ -1,3 +1,4 @@
+import Code from "./workshop-components/Code";
 import Cover from "./workshop-components/Cover";
 import Credits from "./workshop-components/Credits";
 import TextImage from "./workshop-components/TextImage";
@@ -18,6 +19,7 @@ export default function WorkShopBody(props: Props) {
       )}
       {props.workshop.value === "Cover" && <Cover />}
       {props.workshop.value === "Credits" && <Credits />}
+      {props.workshop.value === "Code" && <Code workshop={props.workshop} />}
     </div>
   );
 }
